@@ -1,34 +1,4 @@
-[
-  {
-    "acm": false,
-    "archived_at": null,
-    "buildpack_provided_description": "Java",
-    "build_stack": {
-      "name": "heroku-18"
-    },
-    "created_at": "2020-03-16T11:11:31Z",
-    "id": "0ef721a6-1bcf-478a-b62f-678c454fc8a1",
-    "git_url": "https://git.heroku.com/herokujavafirstapp.git",
-    "maintenance": false,
-    "name": "herokujavafirstapp",
-    "owner": {
-      "email": "getsriraml@gmail.com"
-    },
-    "region": {
-      "id": "59accabd-516d-4f0e-83e6-6e3757701145",
-      "name": "us"
-    },
-    "organization": null,
-    "team": null,
-    "space": null,
-    "internal_routing": null,
-    "released_at": "2020-03-16T11:22:11Z",
-    "repo_size": 62229,
-    "slug_size": 112600231,
-    "stack": {
-      "name": "heroku-18"
-    },
-    "updated_at": "2020-03-16T11:23:11Z",
-    "web_url": "https://myfirstherokujavaapp123.herokuapp.com/"
-  }
-]
+{
+  "name": "Start on Heroku: Java",
+  "description": "A barebones Java app, which can easily be deployed to Heroku."
+}
