@@ -20,13 +20,14 @@
   },
   "buildpacks": [
     {
-      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+      "url": "https://github.com/heroku/heroku-buildpack-java"
     }
   ],
   "environments": {
     "test": {
       "env": {
-              "KEY_ONE": "test-key"
+              "KEY_ONE": "test-key",
+              "KEY_TWO": "test-Anotherkey",
       }
     }
   },
