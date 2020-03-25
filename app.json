@@ -1,0 +1,37 @@
+[
+  {
+    "acm": false,
+    "archived_at": null,
+    "buildpack_provided_description": "Java",
+    "build_stack": {
+      "id": "69bee368-352b-4bd0-9b7c-819d860a2588",
+      "name": "heroku-18"
+    },
+    "created_at": "2020-03-16T11:11:31Z",
+    "id": "0ef721a6-1bcf-478a-b62f-678c454fc8a1",
+    "git_url": "https://git.heroku.com/herokujavafirstapp.git",
+    "maintenance": false,
+    "name": "herokujavafirstapp",
+    "owner": {
+      "email": "jlakshs2@jci.com",
+      "id": "b0d8f12f-666d-45ba-8d3f-07d2e01e7f5a"
+    },
+    "region": {
+      "id": "59accabd-516d-4f0e-83e6-6e3757701145",
+      "name": "us"
+    },
+    "organization": null,
+    "team": null,
+    "space": null,
+    "internal_routing": null,
+    "released_at": "2020-03-16T11:22:11Z",
+    "repo_size": 62229,
+    "slug_size": 112600231,
+    "stack": {
+      "id": "69bee368-352b-4bd0-9b7c-819d860a2588",
+      "name": "heroku-18"
+    },
+    "updated_at": "2020-03-16T11:23:11Z",
+    "web_url": "https://herokujavafirstapp.herokuapp.com/"
+  }
+]

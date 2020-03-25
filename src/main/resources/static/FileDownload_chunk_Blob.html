@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function saveByteArray(reportName, byte) {
+ 	console.log("byte->",byte);
+     var blob = new Blob([], {type: "application/octet-stream"});
+     for(i=0;i<byte.length;i++){
+     	blob = new Blob([blob, byte[i]], {type: "application/octet-stream"});//for array
+     }
+
+     var link = document.createElement('a');
+     link.href = window.URL.createObjectURL(blob);
+     var fileName = reportName;
+     link.download = fileName;
+     console.log("blob->",blob);
+     document.body.appendChild(link);
+	 link.click();
+	 document.body.removeChild(link);
+};
+
+var xhr = [];
+var partialFile = [];
+var minR=[], maxR=[];
+var fileLen = 0;
+var tempSize = 0;
+var fileName = "demo.war";
+
+var fnxhr = function(i,startRange,endRange){
+                xhr[i] = new XMLHttpRequest();
+				xhr[i].open('GET', 'filedownload/partialdownload/'+fileName, true);
+				xhr[i].setRequestHeader('Range', 'bytes='+startRange+'-'+endRange);
+				xhr[i].responseType = "blob";
+				xhr[i].onreadystatechange = function () {
+				  if (xhr[i].readyState != 4) {
+					return;
+				  }
+				  partialFile[i]=xhr[i].response;
+				  console.log("partialFile[i].size->",partialFile[i].size);
+				  tempSize += partialFile[i].size;
+				  console.log("tempSize ->",tempSize);
+				  if(tempSize == fileLen){
+						saveByteArray(fileName, partialFile);
+				  }
+				};
+				xhr[i].send(null);
+		 	 };
+
+function func(){
+		var fileSizeXHR = new XMLHttpRequest();
+			fileSizeXHR.open('GET', 'filedownload/size/'+fileName, true);
+			fileSizeXHR.onreadystatechange = function () {
+			  if (fileSizeXHR.readyState != 4) {
+				return;
+			  }
+			  fileLen=fileSizeXHR.response;
+			  console.log("fileLen ->",fileLen);
+
+			  var range = Math.floor(fileLen/10);
+			  console.log("range",range);
+			  var i=0;
+			  	for( i=0 ; i<10 ; i++){
+			  		minR.push(i * range);
+			  		maxR.push(((i + 1) * range) - 1);
+			  		console.log("minR->",minR[i]);
+			  		console.log("maxR->",maxR[i]);
+			  	}
+			  	if(fileLen > maxR[i-1]){
+			  		minR.push(maxR[i-1] + 1);
+			  		maxR.push(fileLen - 1);
+			  	}
+			  	console.log("minR i+1->",minR[i]);
+			  	console.log("maxR i+1->",maxR[i]);
+
+			  	partialFile = new Array(minR.length);
+			  	for( i=0 ; i< minR.length; i++){
+			  		fnxhr(i,minR[i],maxR[i]);
+				}
+			};
+			fileSizeXHR.send(null);
+}
+
+function pauseXHR(){
+console.log("inside pause",xhr.length);
+	for(i=0;i<minR.length;i++){
+		console.log("pasue->",i+" - "+xhr[i].abort());
+	}
+}
+
+function resumeXHR(){
+	console.log("resume");
+	for(i=0;i<minR.length;i++){
+		console.log("resume->",partialFile[i] == null);
+		if(partialFile[i] == null)
+			fnxhr(i,minR[i],maxR[i]);
+	}
+}
+
+</script>
+</head>
+<body>
+<input type="button" name="tbn" value="buttn" onclick="func()"/>
+<input type="button" name="pastbn" value="pausebuttn" onclick="pauseXHR()"/>
+<input type="button" name="restbn" value="resumebuttn" onclick="resumeXHR()"/>
+</body>
+</html>
