@@ -18,12 +18,6 @@
       "value": "2"
     }
   },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "Standard-1X"
-    }
-  },
   "buildpacks": [
     {
       "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
