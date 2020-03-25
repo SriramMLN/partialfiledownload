@@ -1,4 +1,37 @@
-{
-  "name": "Start on Heroku: Java",
-  "description": "A barebones Java app, which can easily be deployed to Heroku."
-}
+[
+  {
+    "acm": false,
+    "archived_at": null,
+    "buildpack_provided_description": "Java",
+    "build_stack": {
+      "id": "69bee368-352b-4bd0-9b7c-819d860a2588",
+      "name": "heroku-18"
+    },
+    "created_at": "2020-03-25T13:54:53Z",
+    "id": "e19d73f0-0f81-4e6d-b599-c0e55dd2354a",
+    "git_url": "https://git.heroku.com/pure-savannah-76816.git",
+    "maintenance": false,
+    "name": "pure-savannah-76816",
+    "owner": {
+      "email": "getsriraml@gmail.com",
+      "id": "0abfca59-63f9-4a3a-b424-3b385ef44b88"
+    },
+    "region": {
+      "id": "59accabd-516d-4f0e-83e6-6e3757701145",
+      "name": "us"
+    },
+    "organization": null,
+    "team": null,
+    "space": null,
+    "internal_routing": null,
+    "released_at": "2020-03-25T13:55:26Z",
+    "repo_size": null,
+    "slug_size": 112535148,
+    "stack": {
+      "id": "69bee368-352b-4bd0-9b7c-819d860a2588",
+      "name": "heroku-18"
+    },
+    "updated_at": "2020-03-25T13:55:27Z",
+    "web_url": "https://pure-savannah-76816.herokuapp.com/"
+  }
+]
