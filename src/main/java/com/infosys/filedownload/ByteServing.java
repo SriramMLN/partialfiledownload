@@ -112,11 +112,8 @@ public class ByteServing {
 			}
 		}
 		return ResponseEntity.ok().contentType(MediaType.parseMediaType("application/octet;charset=utf-8"))
-<<<<<<< HEAD
 				.header(HttpHeaders.CONTENT_RANGE, "bytes "+ startRange + "-" + endRange)
 				.header(HttpHeaders.CONTENT_LENGTH, ""+sizeOfRange)
-=======
->>>>>>> 7ecd6b33562c6d2bb16d5f4c528b1340f50beb45
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"").body(buffer);
 	}
 
