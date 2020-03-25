@@ -1,11 +1,11 @@
 {
-  "name": "myfirstjavaherokuappxyz",
+  "name": "myfstjavahrkuappx1y2z3",
   "description": "App in Java",
   "keywords": [
     "HTML5",
     "Java"
   ],
-  "website": "https://myfirstjavaherokuappxyz.herokuapp.com/",
+  "website": "https://myfstjavahrkuappx1y2z3.herokuapp.com/",
   "repository": "https://github.com/SriramMLN/partialfiledownload",
   "success_url": "/index.html",
   "env": {
