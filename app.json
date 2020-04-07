@@ -1,0 +1,34 @@
+{
+	"name": "myjavahrkuappx1y2z3",
+	"description": "App in Java",
+	"keywords": [
+		"HTML5",
+		"Java"
+	],
+	"buildpack_provided_description": "Java",
+	"web_url": "https://myjavahrkuappx1y2z3.herokuapp.com/",
+	"repository": "https://github.com/SriramMLN/partialfiledownload",
+	"success_url": "/FileDownload_chunk_Blob.html",
+	"env": {
+		"KEY_ONE": {
+			"description": "A key for storign env specific values.",
+			"value": "one"
+		},
+		"KEY_TWO": {
+			"description": "Another key for storing env specific values.",
+			"value": "2"
+		}
+	},
+	"buildpacks": [{
+		"url": "heroku/java"
+	}],
+	"environments": {
+		"staging": {
+			"env": {
+				"KEY_ONE": "test-key",
+				"KEY_TWO": "test-Anotherkey"
+			}
+		}
+	},
+	"stack": "heroku-18"
+}
